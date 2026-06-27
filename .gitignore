@@ -1,0 +1,16 @@
+.DS_Store
+PDFMalware2022.numbers
+PDF_Malware_Detection_Full_Report copy.pdf
+
+# React
+website/frontend/node_modules/
+website/frontend/build/
+
+# Python
+website/backend/__pycache__/
+website/backend/*.py[cod]
+website/backend/venv/
+
+# IDE
+.vscode/
+.idea/

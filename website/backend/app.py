@@ -19,7 +19,10 @@ feature_list = load_feature_list('features.json')
 
 @app.route("/predict", methods=["POST"])
 def predict():
+    print("==== /predict called ====")
+    print("Headers:", dict(request.headers))
     if "file" not in request.files:
+        print("No file found in request")
         return jsonify({"error": "No file uploaded"}), 400
 
     file = request.files["file"]
@@ -59,4 +62,4 @@ def predict():
         return jsonify({"error": f"Prediction failed: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="127.0.0.1", port=5001, debug=True)
