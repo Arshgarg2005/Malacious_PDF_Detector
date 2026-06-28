@@ -1,5 +1,6 @@
 import json
 from PyPDF2 import PdfReader
+import sys
 
 def load_feature_list(feature_file='features.json'):
     with open(feature_file, 'r') as f:
@@ -57,6 +58,11 @@ def extract_pdf_features(pdf_path, feature_list=None):
     features['XFA'] = data_str.count('/XFA')
     features['Colors'] = data_str.count('/ColorSpace')
     features['Class'] = 0  # Placeholder
+    print(
+        "Features extracted:\n" +
+        json.dumps(features, indent=4),
+        file=sys.stderr
+    )
 
     if feature_list:
         return {key: features.get(key, 0) for key in feature_list}

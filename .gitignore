@@ -10,6 +10,8 @@ website/frontend/build/
 website/backend/__pycache__/
 website/backend/*.py[cod]
 website/backend/venv/
+website/backend/node_modules/
+website/backend/uploads/*
 
 # IDE
 .vscode/
